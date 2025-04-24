@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🧩Mini Trello</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🧩Mini Trello</h1>
+  <div class="board">
+    <div class="column" id="todo">
+      <div class="column-header">
+        <h2>To-Do</h2>
+        <button onclick="openModal('todo')">+ Add Task</button>
+      </div>
+      <div class="tasks" id="todoTasks"></div>
+    </div>
+
+    <div class="column" id="inProgress">
+      <div class="column-header">
+        <h2>In Progress</h2>
+        <button onclick="openModal('inProgress')">+ Add Task</button>
+      </div>
+      <div class="tasks" id="inProgressTasks"></div>
+    </div>
+
+    <div class="column" id="completed">
+      <div class="column-header">
+        <h2>Completed</h2>
+        <button onclick="openModal('completed')">+ Add Task</button>
+      </div>
+      <div class="tasks" id="completedTasks"></div>
+    </div>
+  </div>
+
+  <!-- Modal for adding tasks -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h3>Add Task</h3>
+      <input type="text" id="taskInput" placeholder="Enter task..." />
+      <input type="date" id="dueDateInput" />
+      <label for="priorityInput">Priority:</label>
+      <select id="priorityInput">
+        <option value="low">Low Priority</option>
+        <option value="medium">Medium Priority</option>
+        <option value="high">High Priority</option>
+      </select>
+      <div class="modal-buttons">
+        <button onclick="addTask()">Add Task</button>
+        <button onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
